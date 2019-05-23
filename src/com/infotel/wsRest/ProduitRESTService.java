@@ -44,19 +44,18 @@ public class ProduitRESTService {
 		}
 		
 	@GET
-	@Path("addProdPeri/{nom}/{stock}/{prix}/{date}")
+	@Path("addProdPeri/{nom}/{stock}/{prix}")
 	@Produces(MediaType.APPLICATION_JSON)
 		public void ajouterProdPerissable(
 				@PathParam(value="nom")String nomProduit,
 				@PathParam(value="stock")int stock,
-				@PathParam(value="prix")double prix,
-				@PathParam(value="date")Date dateLimiteUtilisation) {
+				@PathParam(value="prix")double prix) {
 			
 			ProduitPerissable p = new ProduitPerissable();
 			p.setNomProduit(nomProduit);
 			p.setStock(stock);
 			p.setPrix(prix);
-			p.setDateLimiteUtilisation(dateLimiteUtilisation);
+			p.setDateLimiteUtilisation(new Date());
 			
 			dao.ajouterProduit(p);
 		}
