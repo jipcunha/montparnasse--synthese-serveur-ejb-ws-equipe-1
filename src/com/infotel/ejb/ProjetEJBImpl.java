@@ -24,12 +24,6 @@ public class ProjetEJBImpl implements IProjetLocal, IProjetRemote {
 	}
 
 	@Override
-	public List<Magasin> getAllMagasins() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void ajouterMagasin(Magasin m) {
 		// TODO Auto-generated method stub
 		
