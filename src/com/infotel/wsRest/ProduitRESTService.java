@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.jws.WebParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -202,21 +203,53 @@ public class ProduitRESTService {
 	@GET
 	@Path("addProdPeriMag/{nom}/{stock}/{prix}/{date}/{idMagasin}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public void ajouterProduitPerissableMagasin (Produit p, long idMagasin) {
+	public void ajouterProduitPerissableMagasin (
+			@WebParam(name="nom")String nomProduit,
+			@WebParam(name="stock")int stock,
+			@WebParam(name="prix")double prix,
+			@WebParam(name="date")Date dateLimiteUtilisation,
+			@WebParam(name="idMagasin")Long idMagasin) {
 		
-	}
+		ProduitPerissable p = new ProduitPerissable();
+		p.setNomProduit(nomProduit);
+		p.setStock(stock);
+		p.setPrix(prix);
+		p.setDateLimiteUtilisation(dateLimiteUtilisation);
+		
+		dao.ajouterProduitMagasin(p, idMagasin);
+		
+		}
 	
 	@GET
 	@Path("addProdNonPeriMag/{nom}/{stock}/{prix}/{mode}/{idMagasin}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public void ajouterProduitNonPerissableMagasin (Produit p, long idMagasin) {
+	public void ajouterProduitNonPerissableMagasin (
+			@WebParam(name="nom")String nomProduit,
+			@WebParam(name="stock")int stock,
+			@WebParam(name="prix")double prix,
+			@WebParam(name="mode")String modeDemploi,
+			@WebParam(name="idMagasin")Long idMagasin) {
 		
-	}
+		ProduitNonPerissable p = new ProduitNonPerissable();
+		p.setNomProduit(nomProduit);
+		p.setStock(stock);
+		p.setPrix(prix);
+		p.setModeDemploi(modeDemploi);
+		
+		dao.ajouterProduitMagasin(p, idMagasin);
+			
+		}
 
 	@GET
-	@Path("calprixMagasin/{nom}/{code}/{prix}")
+	@Path("calprixMagasin/{idMagasin}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public double calculPrixMagasin (Magasin m) {
-		return 4.5;
+	public double calculPrixMagasin (
+			@WebParam(name="idMagasin")Long idMagasin) {
+		
+		Magasin m = new Magasin();
+		m = dao.getMagasin(idMagasin);
+	
+		return dao.calculPrixMagasin(m);
 	}
+	
 }
