@@ -90,7 +90,7 @@ public class DaoImpl implements IdaoLocal, IdaoRemote {
 		for(Produit p: produits) { 
 			somme += p.getPrix() * p.getStock();
 			}
-				
+				//
 		return somme;
 	}
 
