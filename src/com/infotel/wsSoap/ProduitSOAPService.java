@@ -213,7 +213,12 @@ public class ProduitSOAPService {
 	}
 	
 	@WebMethod
-	public double calculPrixMagasin (Magasin m) {
+	public double calculPrixMagasin (
+			@WebParam(name="idMagasin")Long idMagasin) {
+		
+		Magasin m = new Magasin();
+		m = dao.getMagasin(idMagasin);
+	
 		return dao.calculPrixMagasin(m);
 	}
 	
