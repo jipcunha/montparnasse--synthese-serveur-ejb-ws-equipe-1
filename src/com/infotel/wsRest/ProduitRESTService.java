@@ -201,20 +201,19 @@ public class ProduitRESTService {
 		}
 	
 	@GET
-	@Path("addProdPeriMag/{nom}/{stock}/{prix}/{date}/{idMagasin}")
+	@Path("addProdPeriMag/{nom}/{stock}/{prix}/{idMagasin}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public void ajouterProduitPerissableMagasin (
 			@WebParam(name="nom")String nomProduit,
 			@WebParam(name="stock")int stock,
 			@WebParam(name="prix")double prix,
-			@WebParam(name="date")Date dateLimiteUtilisation,
 			@WebParam(name="idMagasin")Long idMagasin) {
 		
 		ProduitPerissable p = new ProduitPerissable();
 		p.setNomProduit(nomProduit);
 		p.setStock(stock);
 		p.setPrix(prix);
-		p.setDateLimiteUtilisation(dateLimiteUtilisation);
+		p.setDateLimiteUtilisation(new Date());
 		
 		dao.ajouterProduitMagasin(p, idMagasin);
 		
