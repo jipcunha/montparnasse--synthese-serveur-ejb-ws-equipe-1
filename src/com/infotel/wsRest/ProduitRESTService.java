@@ -202,12 +202,22 @@ public class ProduitRESTService {
 		}
 	
 	@GET
-	@Path("addProdMag/{id}/{nom}/{stock}/{prix}/{mode}")
+	@Path("addProdPeriMag/{nom}/{stock}/{prix}/{date}/{idMagasin}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public void ajouterProduitMagasin (Produit p, long idMagasin) {
+	public void ajouterProduitPerissableMagasin (Produit p, long idMagasin) {
+		
+	}
+	
+	@GET
+	@Path("addProdNonPeriMag/{nom}/{stock}/{prix}/{mode}/{idMagasin}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void ajouterProduitNonPerissableMagasin (Produit p, long idMagasin) {
 		
 	}
 
+	@GET
+	@Path("calprixMagasin/{nom}/{code}/{prix}")
+	@Produces(MediaType.APPLICATION_JSON)
 	public double calculPrixMagasin (Magasin m) {
 		return 4.5;
 	}
