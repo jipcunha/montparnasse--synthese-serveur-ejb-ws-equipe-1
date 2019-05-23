@@ -22,6 +22,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Magasin implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4091046880274270091L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idMagasin;
