@@ -23,7 +23,7 @@ public class ApplicationProduit extends Application{
     private void addRestRessources (Set<Class<?>> resources){
         
         //ajout de la resources 
-        resources.add(com.infotel.wsrest.ProduitRESTService.class);
+        resources.add(ProduitRESTService.class);
         
     }
 }

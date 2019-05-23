@@ -1,6 +1,11 @@
 package com.infotel.ejb;
 
+import java.util.List;
+
 import javax.ejb.Local;
+
+import com.infotel.metier.Magasin;
+import com.infotel.metier.Produit;
 
 @Local
 public interface IProjetLocal {

@@ -14,18 +14,14 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.infotel.dao.DaoImpl;
-import com.infotel.metier.Client;
-import com.infotel.metier.Personne;
-import com.infotel.metier.Prestataire;
-import com.infotel.metier.Voiture;
-import com.infotel.wssoap.Magasin;
-import com.infotel.wssoap.Produit;
-import com.infotel.wssoap.ProduitNonPerissable;
-import com.infotel.wssoap.ProduitPerissable;
+import com.infotel.metier.Magasin;
+import com.infotel.metier.Produit;
+import com.infotel.metier.ProduitNonPerissable;
+import com.infotel.metier.ProduitPerissable;
 
 @Stateless
-@Path(value = "/personnes")
-public class PersonneRESTService {
+@Path(value = "/produits")
+public class ProduitRESTService {
 
 	@EJB
 	private DaoImpl dao;

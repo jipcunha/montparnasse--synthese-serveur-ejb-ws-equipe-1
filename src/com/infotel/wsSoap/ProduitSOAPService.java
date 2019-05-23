@@ -10,14 +10,14 @@ import javax.jws.WebParam;
 import javax.jws.WebService;
 
 import com.infotel.dao.DaoImpl;
-import com.infotel.metier.Client;
-import com.infotel.metier.Personne;
-import com.infotel.metier.Prestataire;
-import com.infotel.metier.Voiture;
+import com.infotel.metier.Magasin;
+import com.infotel.metier.Produit;
+import com.infotel.metier.ProduitNonPerissable;
+import com.infotel.metier.ProduitPerissable;
 
 @Stateless
 @WebService
-public class PersonneSOAPService {
+public class ProduitSOAPService {
 	
 	@EJB
 	private DaoImpl dao;

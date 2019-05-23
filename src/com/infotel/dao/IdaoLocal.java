@@ -1,6 +1,11 @@
 package com.infotel.dao;
 
+import java.util.List;
+
 import javax.ejb.Local;
+
+import com.infotel.metier.Magasin;
+import com.infotel.metier.Produit;
 
 
 @Local
@@ -8,7 +13,7 @@ public interface IdaoLocal {
 
 	public void ajouterMagasin(Magasin m);
 	public void supprimerMagasin (long idMagasin);
-	public List<Magasin> getAllMagasin();
+	public List<Magasin> getAllMagasins();
 	public Magasin getMagasin (long idMagasin);
 	public Magasin modifierMagasin (Magasin m);
 

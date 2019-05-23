@@ -1,7 +1,14 @@
 package com.infotel.dao;
 
+import java.util.List;
+
 import javax.ejb.LocalBean;
 import javax.ejb.Singleton;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import com.infotel.metier.Magasin;
+import com.infotel.metier.Produit;
 
 @Singleton
 @LocalBean //permet le dialogue entre la dao et le WS
@@ -22,7 +29,7 @@ public class DaoImpl implements IdaoLocal, IdaoRemote {
 	}
 	
 	@Override
-	public List<Magasin> getAllMagasin(){
+	public List<Magasin> getAllMagasins(){
 		return em.createQuery("select m from Magasin m").getResultList();
 	}
 	
@@ -74,7 +81,7 @@ public class DaoImpl implements IdaoLocal, IdaoRemote {
 	
 	@Override
 	public double calculPrixMagasin (Magasin m) {
-		
+		return 0;
 	}
 
 }
