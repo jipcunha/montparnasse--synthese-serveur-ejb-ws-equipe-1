@@ -176,18 +176,45 @@ public class ProduitSOAPService {
 	}
 	
 	@WebMethod
-	public void ajouterProduitPerissableMagasin (Produit p, long idMagasin) {
-		
+	public void ajouterProduitPerissableMagasin (
+		@WebParam(name="nom")String nomProduit,
+		@WebParam(name="stock")int stock,
+		@WebParam(name="prix")double prix,
+		@WebParam(name="date")Date dateLimiteUtilisation,
+		@WebParam(name="idMagasin")Long idMagasin) {
+	
+	ProduitPerissable p = new ProduitPerissable();
+	p.setNomProduit(nomProduit);
+	p.setStock(stock);
+	p.setPrix(prix);
+	p.setDateLimiteUtilisation(dateLimiteUtilisation);
+	
+	dao.ajouterProduitMagasin(p, idMagasin);
 	}
+		
+
 	
 	@WebMethod
-	public void ajouterProduitNonPerissableMagasin (Produit p, long idMagasin) {
+	public void ajouterProduitNonPerissableMagasin (
+		@WebParam(name="nom")String nomProduit,
+		@WebParam(name="stock")int stock,
+		@WebParam(name="prix")double prix,
+		@WebParam(name="mode")String modeDemploi,
+		@WebParam(name="idMagasin")Long idMagasin) {
+	
+	ProduitNonPerissable p = new ProduitNonPerissable();
+	p.setNomProduit(nomProduit);
+	p.setStock(stock);
+	p.setPrix(prix);
+	p.setModeDemploi(modeDemploi);
+	
+	dao.ajouterProduitMagasin(p, idMagasin);
 		
 	}
 	
 	@WebMethod
 	public double calculPrixMagasin (Magasin m) {
-		return 4.5;
+		return dao.calculPrixMagasin(m);
 	}
 	
 }
