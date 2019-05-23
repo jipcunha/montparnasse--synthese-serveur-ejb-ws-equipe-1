@@ -28,7 +28,7 @@ public class Magasin implements Serializable {
 	private int codeMagasin;
 	private double prixDuLocal; 
 	
-	@OneToMany
+	@OneToMany(mappedBy = "magasin")
 	@XmlTransient
 	List<Produit> produits = new ArrayList<Produit>();
 
