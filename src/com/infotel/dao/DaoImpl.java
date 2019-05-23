@@ -1,11 +1,13 @@
 package com.infotel.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import com.infotel.metier.Magasin;
 import com.infotel.metier.Produit;
@@ -80,10 +82,16 @@ public class DaoImpl implements IdaoLocal, IdaoRemote {
 	
 	@Override
 	public double calculPrixMagasin (Magasin m) {
-//		for(Produit produits : getAllProduits()) { 
-//			 System.out.println(produits);  }
-//		return prixLocal + stock*prix;
-		return 2.3;
+		long idMagasin = m.getIdMagasin();
+		List<Produit> produits = new ArrayList<Produit>();
+		produits = em.createQuery("SELECT p from Produit p where p.idMagasin = :idM").setParameter("idM", idMagasin).getResultList();
+		double somme = m.getPrixDuLocal();
+		
+		for(Produit p: produits) { 
+			somme += p.getPrix() * p.getStock();
+			}
+				
+		return somme;
 	}
 
 }
