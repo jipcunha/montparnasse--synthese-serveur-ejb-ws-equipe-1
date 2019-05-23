@@ -141,7 +141,8 @@ public class ProduitSOAPService {
 			@WebParam(name="nom")String nomProduit,
 			@WebParam(name="stock")int stock,
 			@WebParam(name="prix")double prix,
-			@WebParam(name="date")Date dateLimiteUtilisation) {
+			@WebParam(name="date")Date dateLimiteUtilisation,
+			@WebParam(name="idM")Long idMagasin) {
 		
 			ProduitPerissable p = new ProduitPerissable();
 			p.setIdProduit(idProduit);
@@ -149,6 +150,7 @@ public class ProduitSOAPService {
 			p.setStock(stock);
 			p.setPrix(prix);
 			p.setDateLimiteUtilisation(dateLimiteUtilisation);
+			p.setMagasin(getMagasin(idMagasin));
 				
 			dao.modifierProduit(p);
 			
@@ -161,7 +163,8 @@ public class ProduitSOAPService {
 			@WebParam(name="nom")String nomProduit,
 			@WebParam(name="stock")int stock,
 			@WebParam(name="prix")double prix,
-			@WebParam(name="mode")String modeDemploi) {
+			@WebParam(name="mode")String modeDemploi,
+			@WebParam(name="idM")Long idMagasin) {
 		
 			ProduitNonPerissable p = new ProduitNonPerissable();
 			p.setIdProduit(idProduit);
@@ -169,7 +172,9 @@ public class ProduitSOAPService {
 			p.setStock(stock);
 			p.setPrix(prix);
 			p.setModeDemploi(modeDemploi);
-				
+			p.setMagasin(getMagasin(idMagasin));
+			
+			
 			dao.modifierProduit(p);
 			
 			return p;
