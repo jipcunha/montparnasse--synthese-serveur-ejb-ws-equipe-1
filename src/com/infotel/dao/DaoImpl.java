@@ -80,9 +80,10 @@ public class DaoImpl implements IdaoLocal, IdaoRemote {
 	
 	@Override
 	public double calculPrixMagasin (Magasin m) {
-		for(Produit produits : getAllProduits()) { 
-			 System.out.println(produits);  }
-		return prixLocal + stock*prix;
+//		for(Produit produits : getAllProduits()) { 
+//			 System.out.println(produits);  }
+//		return prixLocal + stock*prix;
+		return 2.3;
 	}
 
 }

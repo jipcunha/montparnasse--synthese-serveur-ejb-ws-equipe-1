@@ -5,8 +5,6 @@ import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.jws.WebMethod;
-import javax.jws.WebParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -202,4 +200,15 @@ public class ProduitRESTService {
 				
 				return p;
 		}
+	
+	@GET
+	@Path("addProdMag/{id}/{nom}/{stock}/{prix}/{mode}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void ajouterProduitMagasin (Produit p, long idMagasin) {
+		
+	}
+
+	public double calculPrixMagasin (Magasin m) {
+		return 4.5;
+	}
 }

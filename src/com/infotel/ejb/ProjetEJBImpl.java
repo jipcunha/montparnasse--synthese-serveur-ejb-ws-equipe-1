@@ -89,11 +89,11 @@ public class ProjetEJBImpl implements IProjetLocal, IProjetRemote {
 		
 	}
 
-	@Override
-	public void supprimerProduitMagasin(Magasin m) {
-		// TODO Auto-generated method stub
-		
-	}
+//	@Override
+//	public void supprimerProduitMagasin(Magasin m) {
+//		// TODO Auto-generated method stub
+//		
+//	}
 
 	@Override
 	public double calculPrixMagasin(Magasin m) {

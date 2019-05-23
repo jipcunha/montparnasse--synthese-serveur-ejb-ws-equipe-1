@@ -23,6 +23,5 @@ public interface IProjetLocal {
 	public Produit modifierProduit (Produit p);
 	
 	public void ajouterProduitMagasin (Produit p, long idMagasin);
-	public void supprimerProduitMagasin (Magasin m);
 	public double calculPrixMagasin (Magasin m);
 }

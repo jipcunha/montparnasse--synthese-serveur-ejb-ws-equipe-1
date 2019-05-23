@@ -175,4 +175,19 @@ public class ProduitSOAPService {
 			return p;
 	}
 	
+	@WebMethod
+	public void ajouterProduitPerissableMagasin (Produit p, long idMagasin) {
+		
+	}
+	
+	@WebMethod
+	public void ajouterProduitNonPerissableMagasin (Produit p, long idMagasin) {
+		
+	}
+	
+	@WebMethod
+	public double calculPrixMagasin (Magasin m) {
+		return 4.5;
+	}
+	
 }
