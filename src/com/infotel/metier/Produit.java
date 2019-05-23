@@ -29,6 +29,10 @@ import javax.xml.bind.annotation.XmlTransient;
 
 public abstract class Produit implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1034628219874228284L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idProduit;

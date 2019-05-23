@@ -11,6 +11,10 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @DiscriminatorValue("PERI")
 public class ProduitPerissable extends Produit {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4333968933387797197L;
 	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date dateLimiteUtilisation;
 

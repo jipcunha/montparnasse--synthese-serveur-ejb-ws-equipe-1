@@ -8,6 +8,10 @@ import javax.persistence.Entity;
 @DiscriminatorValue("NONPERI")
 public class ProduitNonPerissable extends Produit{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4156311191205583061L;
 	private String modeDemploi;
 
 	public String getModeDemploi() {
