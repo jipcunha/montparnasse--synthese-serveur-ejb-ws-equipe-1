@@ -204,10 +204,10 @@ public class ProduitRESTService {
 	@Path("addProdPeriMag/{nom}/{stock}/{prix}/{idMagasin}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public void ajouterProduitPerissableMagasin (
-			@WebParam(name="nom")String nomProduit,
-			@WebParam(name="stock")int stock,
-			@WebParam(name="prix")double prix,
-			@WebParam(name="idMagasin")Long idMagasin) {
+			@PathParam(value="nom")String nomProduit,
+			@PathParam(value="stock")int stock,
+			@PathParam(value="prix")double prix,
+			@PathParam(value="idMagasin")Long idMagasin) {
 		
 		ProduitPerissable p = new ProduitPerissable();
 		p.setNomProduit(nomProduit);
@@ -223,11 +223,11 @@ public class ProduitRESTService {
 	@Path("addProdNonPeriMag/{nom}/{stock}/{prix}/{mode}/{idMagasin}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public void ajouterProduitNonPerissableMagasin (
-			@WebParam(name="nom")String nomProduit,
-			@WebParam(name="stock")int stock,
-			@WebParam(name="prix")double prix,
-			@WebParam(name="mode")String modeDemploi,
-			@WebParam(name="idMagasin")Long idMagasin) {
+			@PathParam(value="nom")String nomProduit,
+			@PathParam(value="stock")int stock,
+			@PathParam(value="prix")double prix,
+			@PathParam(value="mode")String modeDemploi,
+			@PathParam(value="idMagasin")Long idMagasin) {
 		
 		ProduitNonPerissable p = new ProduitNonPerissable();
 		p.setNomProduit(nomProduit);
@@ -243,7 +243,7 @@ public class ProduitRESTService {
 	@Path("calprixMagasin/{idMagasin}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public double calculPrixMagasin (
-			@WebParam(name="idMagasin")Long idMagasin) {
+			@PathParam(value="idMagasin")Long idMagasin) {
 		
 		Magasin m = new Magasin();
 		m = dao.getMagasin(idMagasin);
