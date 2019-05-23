@@ -157,21 +157,20 @@ public class ProduitRESTService {
 		}
 		
 	@GET
-	@Path("modProduitPeri/{id}/{nom}/{stock}/{prix}/{date}")
+	@Path("modProduitPeri/{id}/{nom}/{stock}/{prix}")
 	@Produces(MediaType.APPLICATION_JSON)
 		public Produit modifierProdPerissable(
 				@PathParam(value="id")Long idProduit,
 				@PathParam(value="nom")String nomProduit,
 				@PathParam(value="stock")int stock,
-				@PathParam(value="prix")double prix,
-				@PathParam(value="date")Date dateLimiteUtilisation) {
+				@PathParam(value="prix")double prix) {
 			
 				ProduitPerissable p = new ProduitPerissable();
 				p.setIdProduit(idProduit);
 				p.setNomProduit(nomProduit);
 				p.setStock(stock);
 				p.setPrix(prix);
-				p.setDateLimiteUtilisation(dateLimiteUtilisation);
+				p.setDateLimiteUtilisation(new Date());
 					
 				dao.modifierProduit(p);
 				
