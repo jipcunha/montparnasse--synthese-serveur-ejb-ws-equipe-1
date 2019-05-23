@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
+import javax.persistence.PreRemove;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -24,6 +25,8 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlSeeAlso({ProduitPerissable.class, ProduitNonPerissable.class})
+
+
 public abstract class Produit implements Serializable {
 	
 	@Id
@@ -75,6 +78,5 @@ public abstract class Produit implements Serializable {
 	public void setMagasin(Magasin magasin) {
 		this.magasin = magasin;
 	}
-
 	
 }

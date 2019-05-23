@@ -71,17 +71,18 @@ public class DaoImpl implements IdaoLocal, IdaoRemote {
 	
 	@Override
 	public void ajouterProduitMagasin (Produit p, long idMagasin) {
+		Magasin m = em.find(Magasin.class, idMagasin);
+		p.setMagasin(m);
+		em.persist(p);
 		
 	}
 	
-	@Override
-	public void supprimerProduitMagasin (Magasin m) {
-		
-	}
 	
 	@Override
 	public double calculPrixMagasin (Magasin m) {
-		return 0;
+		for(Produit produits : getAllProduits()) { 
+			 System.out.println(produits);  }
+		return prixLocal + stock*prix;
 	}
 
 }

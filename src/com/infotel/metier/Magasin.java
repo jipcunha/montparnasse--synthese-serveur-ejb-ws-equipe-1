@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.PreRemove;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -73,7 +74,11 @@ public class Magasin implements Serializable {
 		this.produits = produits;
 	}
 
-	
-	
+	@PreRemove
+	public void deleteSetNull() {
+	 for(Produit p : produits) {
+		p.setMagasin(null);
+	 }
+	}
 	
 }
