@@ -84,7 +84,7 @@ public class DaoImpl implements IdaoLocal, IdaoRemote {
 	public double calculPrixMagasin (Magasin m) {
 		long idMagasin = m.getIdMagasin();
 		List<Produit> produits = new ArrayList<Produit>();
-		produits = em.createQuery("SELECT p from Produit p where p.idMagasin = :idM").setParameter("idM", idMagasin).getResultList();
+		produits = em.createQuery("SELECT p from Produit p where p.magasin.idMagasin = :idM").setParameter("idM", idMagasin).getResultList();
 		double somme = m.getPrixDuLocal();
 		
 		for(Produit p: produits) { 
