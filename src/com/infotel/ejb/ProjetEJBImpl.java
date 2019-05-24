@@ -25,80 +25,72 @@ public class ProjetEJBImpl implements IProjetLocal, IProjetRemote {
 
 	@Override
 	public void ajouterMagasin(Magasin m) {
-		// TODO Auto-generated method stub
+		dao.ajouterMagasin(m);
 		
 	}
 
 	@Override
 	public void supprimerMagasin(long idMagasin) {
-		// TODO Auto-generated method stub
+		dao.supprimerProduit(idMagasin);
 		
 	}
 
 	@Override
 	public List<Magasin> getAllMagasins() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getAllMagasins();
 	}
 
 	@Override
 	public Magasin getMagasin(long idMagasin) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getMagasin(idMagasin);
 	}
 
 	@Override
 	public Magasin modifierMagasin(Magasin m) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.modifierMagasin(m);
 	}
 
 	@Override
 	public void ajouterProduit(Produit p) {
-		// TODO Auto-generated method stub
-		
+		dao.ajouterProduit(p);
 	}
 
 	@Override
 	public void supprimerProduit(long idProduit) {
-		// TODO Auto-generated method stub
-		
+		dao.supprimerProduit(idProduit);
 	}
 
 	@Override
 	public List<Produit> getAllProduits() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getAllProduits();
 	}
 
 	@Override
 	public Produit getProduit(long idProduit) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getProduit(idProduit);
 	}
 
 	@Override
 	public Produit modifierProduit(Produit p) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.modifierProduit(p);
 	}
 
 	@Override
 	public void ajouterProduitMagasin(Produit p, long idMagasin) {
-		// TODO Auto-generated method stub
+		dao.ajouterProduitMagasin(p, idMagasin);
 		
 	}
-
-//	@Override
-//	public void supprimerProduitMagasin(Magasin m) {
-//		// TODO Auto-generated method stub
-//		
-//	}
 
 	@Override
 	public double calculPrixMagasin(Magasin m) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.calculPrixMagasin(m);
 	}
 	
 	
